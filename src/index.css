@@ -1,11 +1,4 @@
-/* ================================
-    GLOBAL ESET AND BASE STYLES
-  ================================= */
-
-/* Universal selector which applies to all elements 
-  box-sizing: border box makes sure border included in width and height
-  margin/padding reset removes browser default margin
-*/
+/*GLOBAL RESET AND BASE STYLES */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +15,59 @@
   color-scheme: light;
   color: #213547; /* Awesome gray */
   background-color: #ffffff;
-  font-synthesis: 
+  font-synthesis: none;
+  text-rendering: optimizeLegibility; /* Better rendering */
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smoothing: grayscale; /* Smooth fonts on Firefox & Mac */
 
 }
+/* Body element styles */
+body {
+  margin: 0; 
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Root div where the app mounts */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* MAIN APP CONTAINER */
+/* Uses flexbox for centering */
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  /* Gradient bg */
+  background: liner-gradient(135deg, #5F2A94 0%, #895494 100%);
+  display: flex;
+  flex-direction: column;
+  /* Center vertically and horizntally */
+  align-items: center;
+  justify-content: center;
+}
+
+/* MAIN HEADING STYLING */
+h1 (
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3;) /* Shadow for readability and to look cooler */
+)
+
+/* TRASH CANS CONTAINER */
+   /* Flexbot layout allows it to wrap on small screens */
+.trash-cans-container {
+  display:flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+/* TRASH CAN CARD */
+.trash-can-card {
+  b
+}
+
