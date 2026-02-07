@@ -10,15 +10,15 @@
 :root {
   /* Tries system fonts first, backup is web fonts */
   font-family: system-ui, -apple-system, Blink Mac System Font, 'Segoe UI', Roboto, Oxygen Ubuntu, Cantarell, 'Open Sans', sans-serif;
-  line-height: 1.5; /* Better readability */
-  font-weight: 400; /* Normal Weight */
+  line-height: 1.5; 
+  font-weight: 400; 
   color-scheme: light;
-  color: #213547; /* Awesome gray */
+  color: #213547; 
   background-color: #ffffff;
   font-synthesis: none;
-  text-rendering: optimizeLegibility; /* Better rendering */
+  text-rendering: optimizeLegibility; 
   -webkit-font-smoothing: antialised;
-  -moz-osx-font-smoothing: grayscale; /* Smooth fonts on Firefox & Mac */
+  -moz-osx-font-smoothing: grayscale; 
 
 }
 /* Body element styles */
@@ -35,7 +35,6 @@ body {
 }
 
 /* MAIN APP CONTAINER */
-/* Uses flexbox for centering */
 .app {
   min-height: 100vh;
   padding: 20px;
@@ -43,7 +42,6 @@ body {
   background: liner-gradient(135deg, #5F2A94 0%, #895494 100%);
   display: flex;
   flex-direction: column;
-  /* Center vertically and horizntally */
   align-items: center;
   justify-content: center;
 }
@@ -53,7 +51,7 @@ h1 {
   color: white;
   margin-bottom: 30px;
   font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3;) /* Shadow for readability and to look cooler */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3;) 
 }
 
 /* TRASH CANS CONTAINER */
@@ -69,7 +67,7 @@ h1 {
 /* TRASH CAN CARD */
 .trash-can-card {
   background-color: white;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px; 
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   min-width: 280px;
@@ -83,7 +81,7 @@ h1 {
 /* Emoji icon styling */
 .icon {
   font-size: 4rem;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0.2)); /* Shadow */
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0.2)); 
 }
 
 /* Title text styling */
@@ -99,9 +97,9 @@ h1 {
   height: 250px;
   width: 120px;
   display: flex;
-  justify-content: center; /* Center horixontally */
-  align-items: flex-end; /* Align to bottom */
-  margin: 20px 0; /* Vert spacing */
+  justify-content: center; 
+  align-items: flex-end; 
+  margin: 20px 0; 
 }
 
 /* Battery outline of the container */
@@ -110,26 +108,40 @@ h1 {
   height: 200px;
   border: 8px solid #333;
   border-radius: 15px;
-  position: relative; /* Allows absolute positioning */
+  position: relative; 
   background: #f0f0f0;
   display: flex;
   align-items: flex-end;
-  overflow: hidden; /* Hide overflow */
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inner shadow */
+  overflow: hidden; 
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 /* Battery top cap */
 .battery-outline::before {
-  content: ''; /* Required for pseudo element */
-  position: absolute; /* Position relative to parent */
+  content: ''; 
+  position: absolute; 
   top: -12px;
   left: 50%;
-  transform: translateX(-50%); /* Centering */
+  transform: translateX(-50%); 
   width: 30px;
   height: 12px;
   background: #333;
-  border-radius: 3px 3px 0 0; /* Rounded corners again! */
+  border-radius: 3px 3px 0 0; 
 }
+
+/* Battery fill (the liquid thing) */
+.battery-fill {
+  width: 100%;
+  transition: height 0.5s ease; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0 0 7px 7px; 
+  overflow: hidden;
+}
+
+
 
 
 
