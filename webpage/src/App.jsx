@@ -43,19 +43,17 @@ const TrashCan = ({
 
 
 function App() {
-    const [wetOriginalDepth, setWetOriginalDepth] = useState(null)
-    const [dryOriginalDepth, setDryOriginalDepth] = useState(null)
+    const wetOriginalDepth = 11.5
+    const dryOriginalDepth = 11.5
 
     const [wetCurrentDepth, setWetCurrentDepth] = useState(null)
     const [dryCurrentDepth, setDryCurrentDepth] = useState(null)
 
     useEffect(() => {
         const fetchData = () => {
-            fetch("http://127.0.0.1:5000/api/data")
+            fetch("/api/data")
                 .then(res => res.json())
                 .then(json => {
-                    setWetOriginalDepth(json.wetOriginalDepth)
-                    setDryOriginalDepth(json.dryOriginalDepth)
                     setWetCurrentDepth(json.wetCurrentDepth)
                     setDryCurrentDepth(json.dryCurrentDepth)
                 });
@@ -79,7 +77,6 @@ function App() {
                     type="wet"
                     originalDepth ={wetOriginalDepth}
                     currentDepth = {wetCurrentDepth}
-                    onOriginalChange = {setWetOriginalDepth}
                     onCurrentChange = {setWetCurrentDepth}
                 />
 
@@ -89,7 +86,6 @@ function App() {
                     type="dry"
                     originalDepth = {dryOriginalDepth}
                     currentDepth = {dryCurrentDepth}
-                    onOriginalChange = {setDryOriginalDepth}
                     onCurrentChange = {setDryCurrentDepth}
                 />
             </div>
