@@ -1,0 +1,27 @@
+/* ================================
+    GLOBAL ESET AND BASE STYLES
+  ================================= */
+
+/* Universal selector which applies to all elements 
+  box-sizing: border box makes sure border included in width and height
+  margin/padding reset removes browser default margin
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS varibles(custom properties)
+  Define global design tokens used throughout the app */
+:root {
+  /* Tries system fonts first, backup is web fonts */
+  font-family: system-ui, -apple-system, Blink Mac System Font, 'Segoe UI', Roboto, Oxygen Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  line-height: 1.5; /* Better readability */
+  font-weight: 400; /* Normal Weight */
+  color-scheme: light;
+  color: #213547; /* Awesome gray */
+  background-color: #ffffff;
+  font-synthesis: 
+
+}
