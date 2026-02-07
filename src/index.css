@@ -91,6 +91,20 @@ h1 {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0.2)); 
 }
 
+.filler-text-dry {
+  font-size: 1.5rem; 
+  color: #107ed8;
+}
+
+.filler-text-wet {
+  font-size: 1.5rem;
+  color: #5ea908;
+}
+
+.amount-text {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0.2)); 
+}
+
 /* Title text styling */
 .icon-container h2 {
   margin: 0;
@@ -101,7 +115,7 @@ h1 {
 
 /* Container for the battery indicator */
 .battery-container {
-  height: 250px;
+  height: 200px;
   width: 120px;
   display: flex;
   justify-content: center; 

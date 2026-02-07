@@ -30,7 +30,7 @@ const TrashCan = ({
             <div className="icon">{icon}</div>
             <h2>{title}</h2>
         </div>
-
+        <span className={`filler-text-${type}`}>Capacity:</span>
         <div className="battery-container">
             <div className="battery-outline">
                 <div
@@ -75,8 +75,8 @@ function App() {
 
     return (
         <div className="app">
-            <h1>Trash Monitor</h1>
-
+            <h1>Trash Monitor</h1> 
+            <h2 style={{color: "#FFFFFF"}} className="amount-text">Amount of trash recycled: {(82*82*((wetCurrentDepth+dryCurrentDepth)/4))/1000}cm<sup>3</sup></h2>
             <div className="trash-cans-container">
                 <TrashCan
                     icon="🍌"
