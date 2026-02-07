@@ -81,4 +81,32 @@ function App() {
 
         return () => clearInterval(interval);
     }, []);
+
+    return (
+        <div className="app">
+            <h1>Trash Monitor</h1>
+
+            <div className="trash-cans-container">
+                <TrashCan
+                    icon="🍌"
+                    title="Wet Waste"
+                    type="wet"
+                    originalDepth ={ wetOriginalDepth}
+                    currentDepth = {wetCurrentDepth}
+                    onOriginalChange = {setWetOriginalDepth}
+                    onCurrentChange = {setWetCurrentDepth}
+                />
+
+                <TrashCan
+                    icon="🥤"
+                    title="Dry Waste"
+                    type="dry"
+                    originalDepth = {dryOriginalDepth}
+                    currentDepth = {dryCurrentDepth}
+                    onOriginalChange = {setDryOriginalDepth}
+                    onCurrentChange = {setDryCurrentDepth}
+                />
+            </div>
+        </div>
+    )
 }
