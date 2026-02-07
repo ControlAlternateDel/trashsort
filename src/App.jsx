@@ -43,8 +43,8 @@ const TrashCan = ({
         <div className="battery-container">
             <div className="battery-outline">
                 <div
-                    className={`battery-fill {type}-fill`}
-                    style={{height: `${fillPercentage + 10}%`}}
+                    className={`battery-fill ${type}-fill`}
+                    style={{ height: `${fillPercentage + 10}%` }}
                 >
                     <div className="wave-overlay"></div>
                     <span className="fill-percentage">{Math.round(fillPercentage)}%</span>
@@ -65,13 +65,13 @@ function App() {
 
     useEffect(() => {
         const fetchData = () => {
-            fetch("http:127.0.0.1:5000/api/data")
+            fetch("http://127.0.0.1:5000/api/data")
                 .then(res => res.json())
                 .then(json => {
                     setWetOriginalDepth(json.wetOriginalDepth)
                     setDryOriginalDepth(json.dryOriginalDepth)
                     setWetCurrentDepth(json.wetCurrentDepth)
-                    setDryCurrentDepth(json.dryOriginalDepth)
+                    setDryCurrentDepth(json.dryCurrentDepth)
                 });
         };
 
@@ -91,7 +91,7 @@ function App() {
                     icon="🍌"
                     title="Wet Waste"
                     type="wet"
-                    originalDepth ={ wetOriginalDepth}
+                    originalDepth ={wetOriginalDepth}
                     currentDepth = {wetCurrentDepth}
                     onOriginalChange = {setWetOriginalDepth}
                     onCurrentChange = {setWetCurrentDepth}

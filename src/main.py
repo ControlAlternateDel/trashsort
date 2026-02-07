@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 CORS(
     app,
-    resources={r'api/*': {"origins": "http:localhost:5173"}}
+    resources={r"/api/*": {"origins": "http://localhost:5173"}}
 )
 
 @app.route("/")
@@ -18,7 +18,7 @@ def get_data():
         wetOriginalDepth=500,
         wetCurrentDepth=345,
         dryOriginalDepth=5000,
-        dryCurrentDepth=851
+        dryCurrentDepth=3000
     )
 
 app.run(debug=True)
