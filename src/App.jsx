@@ -44,7 +44,7 @@ const TrashCan = ({
             <div className="battery-outline">
                 <div
                     className={`battery-fill {type}-fill`}
-                    style={{height: `${fill-percentage + 10}%`}}
+                    style={{height: `${fillPercentage + 10}%`}}
                 >
                     <div className="wave-overlay"></div>
                     <span className="fill-percentage">{Math.round(fillPercentage)}%</span>
