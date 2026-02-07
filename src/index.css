@@ -9,7 +9,7 @@
   Define global design tokens used throughout the app */
 :root {
   /* Tries system fonts first, backup is web fonts */
-  font-family: system-ui, -apple-system, Blink Mac System Font, 'Segoe UI', Roboto, Oxygen Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystem Font, 'Segoe UI', Roboto, Oxygen Ubuntu, Cantarell, 'Open Sans', sans-serif;
   line-height: 1.5; 
   font-weight: 400; 
   color-scheme: light;
@@ -17,7 +17,7 @@
   background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility; 
-  -webkit-font-smoothing: antialised;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
 
 }
@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
   padding: 20px;
   /* Gradient bg */
-  background: liner-gradient(135deg, #5F2A94 0%, #895494 100%);
+  background: linear-gradient(135deg, #5F2A94 0%, #895494 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,6 +76,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 0px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
 }
 
 /* Emoji icon styling */
@@ -139,25 +146,24 @@ h1 {
   position: relative;
   border-radius: 0 0 7px 7px; 
   overflow: hidden;
+  /* Wavy top of liquid */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
+  mask-size: 100px 100%; 
+    -webkit-mask-size: 100px 100%; 
+    mask-repeat: repeat-x; 
+  -webkit-mask-repeat: repeat-x;
+  mask-position: 0 top;
+  -webkit-mask-position: 0 top;
+  animation: wave-mask-animation 2s linear infinite;
+
 }
-
-/* Wavy top of liquid */
-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
--webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
-mask-size: 100px 100%; 
-  -webkit-mask-size: 100px 100%; 
-  mask-repeat: repeat-x; 
--webkit-mask-repeat: repeat-x;
-mask-position: 0 top;
--webkit-mask-position: 0 top;
-animation: wave-mask-animation 2s linear infinite;
-
 /* Wave overlay animation */
 .wave-overlay {
   position: absolute;
   top: -20px;
   left: 0;
-  width: 200%
+  width: 200%;
   height: 40px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 Q12.5,10 25,20 T50,20 T75,20 T100,20' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-size: 100px 40px;
@@ -169,10 +175,10 @@ animation: wave-mask-animation 2s linear infinite;
 
 /* Fill colors */
 .wet-fill {
-  background: linear-gradient{to top, #4ade80, #22c55e, #16a34a};
+  background: linear-gradient(to top, #4ade80, #22c55e, #16a34a);
 }
 .dry-fill {
-  background: linear-gradient{to top, #60a5fa, #3b82f6, #2563eb};
+  background: linear-gradient(to top, #60a5fa, #3b82f6, #2563eb);
 }
 
 /* Fill percentage displau */
@@ -185,8 +191,80 @@ animation: wave-mask-animation 2s linear infinite;
 }
 
 /* ANIMATIONS */
+/* wave animation */
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
 
+/* Wave Mask Animation */
+@keyframes wave-mask-animation {
+  0% {
+    mask-position: 0 top;
+    -webkit-mask-position: 0 top;
+  }
+  100% {
+    mask-position: 100 top;
+    -webkit-mask-position: 100 top;
+  }
+}
 
+/* responsive desing elements */
 
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 
+  .trash-cans-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .trash-can-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px;
+  }
+
+  .battery-container {
+    height: 220px;
+  }
+
+  .battery-outline {
+    height: 180px;
+    width: 70px;
+  }
+
+  .icon {
+    font-size: 3rem;
+  }
+}
+
+/* mobile devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .trash-can-card {
+    padding: 15px;
+  }
+
+  .battery-container {
+    height: 200px;
+  }
+
+  .battery-outline {
+    height: 160px;
+    width: 60px;
+  }
+}
