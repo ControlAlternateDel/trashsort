@@ -218,14 +218,15 @@ h1 {
 /* Wave Mask Animation */
 @keyframes wave-mask-animation {
   0% {
-    mask-position: 0 top;
-    -webkit-mask-position: 0 top;
+    mask-position: 0px top;
+    -webkit-mask-position: 0px top;
   }
   100% {
-    mask-position: 100 top;
-    -webkit-mask-position: 100 top;
+    mask-position: 100px top;
+    -webkit-mask-position: 100px top;
   }
 }
+
 
 /* responsive desing elements */
 
