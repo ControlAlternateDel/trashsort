@@ -51,7 +51,7 @@ h1 {
   color: white;
   margin-bottom: 30px;
   font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3;) 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 /* TRASH CANS CONTAINER */
@@ -141,9 +141,50 @@ h1 {
   overflow: hidden;
 }
 
+/* Wavy top of liquid */
+mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
+-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10 L100,100 L0,100 Z' fill='white'/%3E%3C/svg%3E");
+mask-size: 100px 100%; 
+  -webkit-mask-size: 100px 100%; 
+  mask-repeat: repeat-x; 
+-webkit-mask-repeat: repeat-x;
+mask-position: 0 top;
+-webkit-mask-position: 0 top;
+animation: wave-mask-animation 2s linear infinite;
 
+/* Wave overlay animation */
+.wave-overlay {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 200%
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 Q12.5,10 25,20 T50,20 T75,20 T100,20' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-size: 100px 40px;
+  background-repeat: repeat-x;
+  animation: wave-animation 2s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
 
+/* Fill colors */
+.wet-fill {
+  background: linear-gradient{to top, #4ade80, #22c55e, #16a34a};
+}
+.dry-fill {
+  background: linear-gradient{to top, #60a5fa, #3b82f6, #2563eb};
+}
 
+/* Fill percentage displau */
+.fill-percentage {
+  color: white;
+  font-weight: bold;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* ANIMATIONS */
 
 
 
