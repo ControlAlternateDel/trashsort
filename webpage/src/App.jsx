@@ -8,11 +8,6 @@ const TrashCan = ({
     originalDepth,
     currentDepth,
 }) => {
-    /**
-    * @param {number} originalDepth
-    * @param {number} currentDepth
-    * @returns {number}
-    */
    const calculateFillPercentage = (originalDepth, currentDepth) => {
     if (originalDepth <= 0 ) return 0
     const filledDepth = originalDepth - currentDepth
