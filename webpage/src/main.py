@@ -5,7 +5,7 @@ import time
 app = Flask(__name__)
 
 # Open serial ONCE
-ser = serial.Serial('/dev/cu.usbmodem1401', 9600, timeout=0.1)
+ser = serial.Serial('/dev/cu.usbmodem11101', 19200, timeout=0.1)
 time.sleep(2)  # Arduino reset
 
 dryDist = None

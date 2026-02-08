@@ -69,7 +69,7 @@ function App() {
     return (
         <div className="app">
             <h1>Trash Monitor</h1> 
-            <h2 style={{color: "#FFFFFF"}} className="amount-text">Amount of trash recycled: {(82*82*((wetCurrentDepth+dryCurrentDepth)/4))/1000}cm<sup>3</sup></h2>
+            <h2 style={{color: "#FFFFFF"}} className="amount-text">Amount of trash recycled: {(82*82*(((wetOriginalDepth-wetCurrentDepth)+(dryOriginalDepth - dryCurrentDepth))/4))/1000}cm<sup>3</sup></h2>
             <div className="trash-cans-container">
                 <TrashCan
                     icon="🍌"
